@@ -1,2 +1,2 @@
 # sistemaApiVendas
-Sistema de vendas fullstack com Spring Boot + PostgreSQL
+Api de vendas fullstack com Spring Boot + PostgreSQL
