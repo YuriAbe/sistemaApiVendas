@@ -8,7 +8,7 @@ public record CategoriaRequestDTO (
     @NotBlank(message = "O nome é obrigatório")
         @Size(min = 3, message = "O nome deve ter no mínimo 3 caracteres")
         @Schema(example = "Categoria")
-        String nome
+        String nomeCategoria
 ){}
 
 

@@ -42,7 +42,7 @@ public class CategoriaService {
     // ResponseDTO
     public CategoriaResponseDTO salvar(CategoriaRequestDTO dto) {
         Categoria categoria = new Categoria();
-        categoria.setNomeCategoria(dto.nome());
+        categoria.setNomeCategoria(dto.nomeCategoria());
 
         Categoria salvo = repository.save(categoria);
         return CategoriaResponseDTO.fromEntity(salvo);
@@ -54,7 +54,7 @@ public class CategoriaService {
                 .orElseThrow(() -> new RuntimeException("Categoria não encontrada"));
 
         // Transfere os dados do DTO para o Entity
-        existente.setNomeCategoria(dto.nome());
+        existente.setNomeCategoria(dto.nomeCategoria());
 
         // Salva e converte para o DTO de saida
         Categoria atualizado = repository.save(existente);

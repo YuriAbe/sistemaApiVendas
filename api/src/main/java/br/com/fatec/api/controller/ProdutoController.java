@@ -31,7 +31,7 @@ public class ProdutoController {
     @GetMapping
     public ResponseEntity<Page<ProdutoResponseDTO>> listarProdutos(
             @ParameterObject
-            @PageableDefault(size = 5, page = 0, sort = "nome") Pageable pageable) {
+            @PageableDefault(size = 5, page = 0, sort = "nomeProduto") Pageable pageable) {
 
         Page<ProdutoResponseDTO> pagina = service.listarTodos(pageable);
         return ResponseEntity.ok(pagina);

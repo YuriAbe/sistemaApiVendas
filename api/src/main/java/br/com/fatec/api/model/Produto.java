@@ -1,5 +1,7 @@
 package br.com.fatec.api.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,5 +32,6 @@ public class Produto {
 
     @ManyToOne
     @JoinColumn(name = "idcategoriafk")
+    @JsonManagedReference
     private Categoria categoria;
 }

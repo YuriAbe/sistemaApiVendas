@@ -16,5 +16,9 @@ public record ProdutoRequestDTO (
         @Schema(example = "100.0")
         @NotNull(message = "O preço é obrigatório")
         @Positive(message = "O preço deve ser maior que zero")
-        Double preco
+        Double preco,
+
+        @Schema(example = "1")
+        @NotNull(message = "O id de categoria é obrigatório")
+        Long idCategoria
 ) {}

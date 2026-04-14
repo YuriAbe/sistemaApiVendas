@@ -29,7 +29,7 @@ public class CategoriaController {
     // LISTAR COM PAGINAÇÃO
     @GetMapping
     public ResponseEntity<Page<CategoriaResponseDTO>> listarCategorias(
-            @ParameterObject @PageableDefault(size = 5, page = 0, sort = "nome") Pageable pageable) {
+            @ParameterObject @PageableDefault(size = 5, page = 0, sort = "nomeCategoria") Pageable pageable) {
 
         Page<CategoriaResponseDTO> pagina = service.listarTodos(pageable);
         return ResponseEntity.ok(pagina);
@@ -66,10 +66,11 @@ public class CategoriaController {
         return ResponseEntity.noContent().build();
     }
 
+    @Operation(summary = "Buscar categoria pelo Nome", description = "Cadastra um objeto categoria pelo seu nome com ignore case")
     @GetMapping("/buscar")
     public ResponseEntity<Page<CategoriaResponseDTO>> buscarCategorias(
             @RequestParam String nome,
-            @PageableDefault(size = 10, sort = "nome") Pageable pageable
+            @PageableDefault(size = 10, sort = "nomeCategoria") Pageable pageable
     ) {
         Page<CategoriaResponseDTO> pagina = service.buscarPorNome(nome, pageable);
         return ResponseEntity.ok(pagina);
