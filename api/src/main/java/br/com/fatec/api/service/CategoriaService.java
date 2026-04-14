@@ -18,9 +18,9 @@ public class CategoriaService {
     private CategoriaRepository repository;
 
     // Buscar por nome: Converte a lista de Entidades para DTOs
-    public Page<CategoriaResponseDTO> buscarPorNome(String nome, Pageable pageable) {
+    public Page<CategoriaResponseDTO> buscarPorNome(String nomeCategoria, Pageable pageable) {
         return repository
-                .findByNomeCategoriaContainingIgnoreCase(nome, pageable)
+                .findByNomeCategoriaContainingIgnoreCase(nomeCategoria, pageable)
                 .map(CategoriaResponseDTO::fromEntity);
     }
 
